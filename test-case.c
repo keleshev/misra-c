@@ -25,7 +25,12 @@ inside_comment(int a[])
         in_comment = 0;
 }
 */
-rule_nested_comments(int in_comment, int in_comment_old, int line)
+"rule_nested_comments(int in_comment, int in_comment_old, int line)"
+"rule_nested_comments(int in_comment, int in_comment_old, int line)"
+"rule_nested_comments(int in_comment, int in_comment_old, int line)"
+"rule_nested_comments(int in_comment, int in_comment_old, int line)"
+"rule_nested_comments(int in_comment, int in_comment_old, int line)"
+"rule_nested_comments(int in_comment, int in_comment_old, int line)"
 {
     /*/*p("(%d,%d)", in_comment, in_comment_old);
     /*/

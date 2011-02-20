@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+echo "___misra-c.sh________________________________________________________"
+
 # compile and put in /tmp folder 
 # (tmp folder is wiped at every reboot)
 echo "___gcc-messages______"
