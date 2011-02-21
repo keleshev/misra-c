@@ -5,7 +5,8 @@ echo "___misra-c.sh________________________________________________________"
 # compile and put in /tmp folder 
 # (tmp folder is wiped at every reboot)
 echo "___gcc-messages______"
-gcc -std=c99 misra-c.c -o /tmp/misra-c
+#gcc -std=c99 misra-c.c -o /tmp/misra-c
+gcc -std=c99 -pedantic misra-c.c -o /tmp/misra-c
 
 # allow execution
 #chmod 755 /tmp/misra-c
@@ -23,4 +24,4 @@ echo "___stdin_____________"
 echo "___end_______________"
 
 
-#rm misra-c
+rm /tmp/misra-c
