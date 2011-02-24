@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <iso646.h>
 
-#define DIGITS  ("0123456789")
-#define LETTERS ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+#define DIGITS   "0123456789"
+#define LETTERS  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+#define IDENTIFIER_CHARACTERS        LETTERS "_" DIGITS 
+#define IDENTIFIER_FIRST_CHARACTERS  LETTERS "_"
 
 #include "properties.c"
 #include "rules.c"

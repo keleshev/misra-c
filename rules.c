@@ -37,9 +37,10 @@ void rule_4_1_only_simple_escape_sequences_allowed(int in_quote,
 void rule_4_2_trigraphs_not_allowed(int a[], int line)
 {
     // Trigraphs are: ??=  ??(  ??/  ??)  ??'  ??<  ??!  ??>  ??- 
+    
     char trigraph_last_characters[] = "=()/'<!>-";
     
-    if (a[2]=='?' and a[1]=='?' and is_one_of(a[0],trigraph_last_characters))
+    if (a[2]=='?' and a[1]=='?' and is_one_of(a[0], trigraph_last_characters))
         printf("%d:rule_4_2_trigraphs_not_allowed()\n", line);
 }
 
@@ -51,14 +52,10 @@ void rule_5_1_identifiers_longer_than_31_characters_not_allowed(int in_code,
     int n=1;
     
     if (in_code 
-        and is_not_one_of(a[32], DIGITS)
-        and is_not_one_of(a[32], LETTERS)
-        and a[32]!='_'
-        and (is_one_of(a[31], LETTERS) or a[31]=='_'))  // 1st char
+        and is_not_one_of(a[32], IDENTIFIER_CHARACTERS)
+        and is_one_of(a[31], IDENTIFIER_FIRST_CHARACTERS))
             for (int i=0; i<31; i++)
-                if (is_one_of(a[i], LETTERS) 
-                    or is_one_of(a[i], DIGITS)
-                    or a[i]=='_') 
+                if (is_one_of(a[i], IDENTIFIER_CHARACTERS)) 
                     n++;
                     
     if (n==32)
@@ -74,9 +71,7 @@ void rule_7_1_octal_constants_and_escape_sequences_not_allowed(int in_code,
 {
     // Octal constants not allowed check:
     if (in_code
-        and is_not_one_of(a[2], DIGITS)
-        and is_not_one_of(a[2], LETTERS)
-        and a[2]!='_'
+        and is_not_one_of(a[2], IDENTIFIER_CHARACTERS)
         and a[1]=='0'
         and is_one_of(a[0], DIGITS))
         printf("%d:rule_7_1_octal_constants_and_escape_sequences_not_allowed\n",

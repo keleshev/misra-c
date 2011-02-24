@@ -5,7 +5,7 @@ echo "___misra-c________________________________________________________"
 # compile and put in /tmp folder 
 # (tmp folder is wiped at every reboot)
 echo "___gcc-messages______"
-#gcc -std=c99 misra-c.c -o /tmp/misra-c
+#gcc -std=gnu99 main.c -o /tmp/misra-c
 gcc -std=c99 -pedantic main.c -o /tmp/misra-c
 
 # run test-case
