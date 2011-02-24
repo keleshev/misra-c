@@ -33,6 +33,7 @@ int main() {
     int in_quote_old,        in_quote = 0;
     int in_comment_old_old, in_comment_old, in_comment = 0;
     int in_code_old, in_code = 0;
+    int in_preprocessor_directive_old, in_preprocessor_directive = 0;
     
     while (c = getchar(), c != EOF) {
         if (c=='\n') line++;
@@ -46,6 +47,7 @@ int main() {
         in_comment_old_old = in_comment_old;
         in_comment_old = in_comment;
         in_code_old = in_code;
+        in_preprocessor_directive_old = in_preprocessor_directive;
         
         //
         // properties checks:
@@ -73,8 +75,10 @@ int main() {
                                    in_single_quote,
                                    in_double_quote);
         
-        //if (is_one_of(c, DIGITS)) printf("D!");
+        in_preprocessor_directive = check_if_in_preprocessor_directive(in_code,
+                                              in_preprocessor_directive_old, b);
         
+//        if (in_preprocessor_directive) printf("_");
 //        if (in_single_quote) printf("'");
 //        if (in_double_quote) printf("\"");
 //        if (in_comment)      printf("_");
@@ -107,6 +111,9 @@ int main() {
         rule_14_5_continue_not_allowed(in_code, b, line);
         
         rule_19_6_undef_not_allowed(in_code, b, line);
+        
+        rule_19_13_token_concatenation_not_allowed(in_preprocessor_directive,
+                                                   b, line);
         
     }
 }

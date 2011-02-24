@@ -102,6 +102,18 @@ int /*in_code*/ check_if_in_code(int in_comment,
     else return 1;
 }
 
+int check_if_in_preprocessor_directive(int in_code,
+                                       int in_preprocessor_directive,
+                                       int a[])
+{
+    if (in_code and not in_preprocessor_directive and a[0]=='#')
+        return 1;
+    else if (in_code and in_preprocessor_directive 
+             and a[0]=='\n' and a[1]!='\\')
+        return 0;
+    else return in_preprocessor_directive;
+}
+
 
 
 
