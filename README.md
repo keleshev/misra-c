@@ -6,11 +6,11 @@ This project is an attempt to implement a small command-line tool for checking t
 The following rules are planned to be implemented
 -------------------------------------------------
 
-### Rule 2.2 (requited): Source code shall only use /* ... */ style comments.
+### √ Rule 2.2 (requited): Source code shall only use `/*` ... `*/` style comments.
 
-### Rule 2.3 (required): The character sequence /* shall not be used within a comment.
+### √ Rule 2.3 (required): The character sequence /* shall not be used within a comment.
 
-### Rule 4.1 (required): Only those escape sequences that are defined in the ISO C standard shall be used.
+### √ Rule 4.1 (required): Only those escape sequences that are defined in the ISO C standard shall be used.
 
 Permited: 
     
@@ -21,13 +21,13 @@ Not permited:
         \0... octal-digit
         \x... hexadecimal-digit 
 
-### Rule 4.2 (required): Trigraphs shall not be used.
+### √ Rule 4.2 (required): Trigraphs shall not be used.
 
         ??=  ??(  ??/  ??)  ??'  ??<  ??!  ??>  ??- 
 
 ### Rule 5.1 (required): Identifiers (internal and external) shall not rely on the significance of more than 31 characters.
 
-### Rule 7.1 (required): Octal constants (other than zero) and octal escape sequences shall not be used.
+### √ Rule 7.1 (required): Octal constants (other than zero) and octal escape sequences shall not be used.
 
 ### Rule 12.10 (required): The comma operator shall not be used.
 
@@ -35,7 +35,7 @@ Not permited:
 
 ### Rule 13.1 (required): Assignment operators shall not be used in expressions that yield a Boolean value.
 
-i.e. in expressions like if(...) and while, or is it more complex?
+> i.e. in expressions like if(...) and while, or is it more complex?
 
 ### Rule 14.3 (required): Before preprocessing, a null statement shall only occur on a line by itself; it may be followed by a comment provided that the first character following the null statement is a white-space character.
 
@@ -68,7 +68,6 @@ i.e. in expressions like if(...) and while, or is it more complex?
 ### Rule 19.12 (required): There shall be at most one occurrence of the # or ## operators in a single macro definition.
 
 ### Rule 19.13 (advisory): The # and ## operators should not be used.
-
 
 
 
