@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <iso646.h>
 
-#define DIGITS ("0123456789")
+#define DIGITS  ("0123456789")
+#define LETTERS ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 #include "properties.c"
 #include "rules.c"
@@ -66,12 +67,37 @@ int main() {
         
         //if (is_one_of(c, DIGITS)) printf("D!");
         
+//        if (in_single_quote) printf("'");
+//        if (in_double_quote) printf("\"");
+//        if (in_comment)      printf("_");
+        
         //
         // rules check:
         //
-        rule_2_2_cpp_style_comments_not_allowed(in_code, b, line); 
-        rule_2_3_nested_comments_not_allowed(in_comment, in_comment_old, line);
-        rule_4_2_only_simple_escape_sequences_allowed(in_quote, b, line);
+        rule_2_2_cpp_style_comments_not_allowed(in_code, 
+                                                b, line); 
+        
+        
+        rule_2_3_nested_comments_not_allowed(in_comment, 
+                                             in_comment_old, 
+                                             line);
+        
+        rule_4_2_only_simple_escape_sequences_allowed(in_quote, 
+                                                      b, line);
+        
+        rule_7_1_octal_constants_and_escape_sequences_not_allowed(in_code,
+                                                                  in_quote, 
+                                                                  b, line);
         
     }
 }
+
+
+
+
+
+
+
+
+
+

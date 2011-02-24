@@ -1,5 +1,8 @@
-one /*/* /*two//*/ three
-four 'fi//ve' //six
-seven "ei//ght" nine
-ten eleven twelve
-"\? \\ \a \b \0 \01 \x"
+one 'two three
+four 'five\' six'
+seven "eight nine\
+ten eleven twelve"
+"\? \\ \a \b \0 \01 \x\y"
+int abc = 123;
+int abc = 012;
+def(456+056078);

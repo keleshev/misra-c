@@ -11,6 +11,11 @@ int /*is_one_of_{kind}*/ is_one_of(char character, char string[])
     return 0;
 }
 
+int /*is_not_one_of_{kind}*/ is_not_one_of(char character, char string[])
+{
+    return not is_one_of(character, string);
+}
+
 int /*in_{quote_type}_quote*/ check_if_in_a_certain_quote(char quote_type, 
                                                 int in_a_certain_quote_old, 
                                                 int in_other_type_of_quote_old,
@@ -21,13 +26,15 @@ int /*in_{quote_type}_quote*/ check_if_in_a_certain_quote(char quote_type,
     
     if (in_comment_old!=0                   // If we are inside of comment,
         or in_other_type_of_quote_old==1 )  // or another kind of quote (' or ")
-        in_a_certain_quote = 0;                       // then it's not our quote anyway.
+        in_a_certain_quote = 0;             // then it's not our quote anyway.
     
     else if (a[0]==quote_type)   // If we encounter our quote in buffer,
-                                   // it is either a closing or opening quote,
-        in_a_certain_quote = !in_a_certain_quote_old;  // so we change the state to the opposit.
+                                 // it is either a closing or opening quote,
+                                 // so we change the state to the opposit:
+        in_a_certain_quote = !in_a_certain_quote_old;  
     
-    else in_a_certain_quote = in_a_certain_quote_old;   // Otherwise change nothing.
+    // Otherwise change nothing:
+    else in_a_certain_quote = in_a_certain_quote_old;
     
     return in_a_certain_quote;
 }
