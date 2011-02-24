@@ -63,7 +63,7 @@ Not permited:
 
 ### Rule 19.5 (required): Macros shall not be #define’d or #undef’d within a block.
 
-### Rule 19.6 (required): #undef shall not be used.
+### √ Rule 19.6 (required): #undef shall not be used.
 
 ### Rule 19.12 (required): There shall be at most one occurrence of the # or ## operators in a single macro definition.
 

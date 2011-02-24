@@ -97,6 +97,7 @@ void rule_14_4_goto_not_allowed(int in_code, int a[], int line)
             printf("%d:rule_14_4_goto_not_allowed()\n", line);
 }
 
+
 void rule_14_5_continue_not_allowed(int in_code, int a[], int line)
 {
     if (in_code
@@ -104,6 +105,15 @@ void rule_14_5_continue_not_allowed(int in_code, int a[], int line)
         and is_in_buffer_at("continue", a, 8)
         and is_not_one_of(a[0], IDENTIFIER_CHARACTERS))
             printf("%d:rule_14_5_continue_not_allowed()\n", line);
+}
+
+void rule_19_6_undef_not_allowed(int in_code, int a[], int line)
+{
+    if (in_code
+        and is_not_one_of(a[7], IDENTIFIER_CHARACTERS)
+        and is_in_buffer_at("#undef", a, 6)
+        and is_not_one_of(a[0], IDENTIFIER_CHARACTERS))
+            printf("%d:rule_19_6_undef_not_allowed()\n", line);
 }
 
 

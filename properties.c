@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int /*is_one_of_{kind}*/ is_one_of(char character, char string[])
 {
     char c;
@@ -11,10 +12,12 @@ int /*is_one_of_{kind}*/ is_one_of(char character, char string[])
     return 0;
 }
 
+
 int /*is_not_one_of_{kind}*/ is_not_one_of(char character, char string[])
 {
     return not is_one_of(character, string);
 }
+
 
 int /*is_in_buffer_at_{position}*/ is_in_buffer_at(char string[],
                                                     int buffer[],
@@ -31,6 +34,7 @@ int /*is_in_buffer_at_{position}*/ is_in_buffer_at(char string[],
 
     return 1;
 }
+
 
 int /*in_{quote_type}_quote*/ check_if_in_a_certain_quote(char quote_type, 
                                                 int in_a_certain_quote_old, 
@@ -54,6 +58,7 @@ int /*in_{quote_type}_quote*/ check_if_in_a_certain_quote(char quote_type,
     
     return in_a_certain_quote;
 }
+
 
 int /*in_comment*/ check_if_in_comment(int in_comment_old, 
                                        int in_comment_old_old, 
@@ -80,12 +85,14 @@ int /*in_comment*/ check_if_in_comment(int in_comment_old,
     return in_comment;
 }
 
+
 int /*in_quote*/ check_if_in_quote(int in_single_quote,
                                    int in_double_quote)
 {
     if (in_single_quote or in_double_quote) return 1;
     else return 0;
 }
+
 
 int /*in_code*/ check_if_in_code(int in_comment,
                                  int in_single_quote,

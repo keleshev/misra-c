@@ -106,8 +106,7 @@ int main() {
         
         rule_14_5_continue_not_allowed(in_code, b, line);
         
-        //if (is_in_buffer_at("continue", "alsdf; eunitnoc slkd", 14))
-            //printf("!");
+        rule_19_6_undef_not_allowed(in_code, b, line);
         
     }
 }
