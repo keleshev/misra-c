@@ -3,8 +3,8 @@ MISRA-C
 
 This project is an attempt to implement a small command-line tool for checking the conformance of programs written in C with some of the rulse of [MISRA-C:2004](http://en.wikipedia.org/wiki/MISRA_C) software development standard. 
 
-The following rules are planned to be implemented
--------------------------------------------------
+Checks for the following rules are implemented:
+-----------------------------------------------
 
 ### √ Rule 2.2 (requited): Source code shall only use `/*` ... `*/` style comments.
 
@@ -29,19 +29,25 @@ Not permited:
 
 ### √ Rule 7.1 (required): Octal constants (other than zero) and octal escape sequences shall not be used.
 
+### √ Rule 14.4 (required): The goto statement shall not be used.
+
+### √ Rule 14.5 (required): The continue statement shall not be used.
+
+### √ Rule 19.6 (required): #undef shall not be used.
+
+### √ Rule 19.13 (advisory): The # and ## operators should not be used.
+
+
+Checks for the following rules are planned to be implemented:
+-------------------------------------------------------------
+
 ### Rule 12.10 (required): The comma operator shall not be used.
 
 ### Rule 12.13 (advisory): The increment (++) and decrement (--) operators should not be mixed with other operators in an expression.
 
 ### Rule 13.1 (required): Assignment operators shall not be used in expressions that yield a Boolean value.
 
-> i.e. in expressions like if(...) and while, or is it more complex?
-
 ### Rule 14.3 (required): Before preprocessing, a null statement shall only occur on a line by itself; it may be followed by a comment provided that the first character following the null statement is a white-space character.
-
-### √ Rule 14.4 (required): The goto statement shall not be used.
-
-### √ Rule 14.5 (required): The continue statement shall not be used.
 
 ### Rule 14.6 (required): For any iteration statement there shall be at most one break statement used for loop termination.
 
@@ -63,13 +69,7 @@ Not permited:
 
 ### Rule 19.5 (required): Macros shall not be #define’d or #undef’d within a block.
 
-### √ Rule 19.6 (required): #undef shall not be used.
-
 ### Rule 19.12 (required): There shall be at most one occurrence of the # or ## operators in a single macro definition.
-
-### Rule 19.13 (advisory): The # and ## operators should not be used.
-
-
 
 
 
