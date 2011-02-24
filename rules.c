@@ -9,6 +9,7 @@ void rule_2_2_cpp_style_comments_not_allowed(int in_code,
         printf("%d:rule_2_2_cpp_style_comments_not_allowed()\n", line);
 }
 
+
 void rule_2_3_nested_comments_not_allowed(int in_comment, 
                                           int in_comment_old, 
                                           int line) 
@@ -17,7 +18,8 @@ void rule_2_3_nested_comments_not_allowed(int in_comment,
        printf("%d:rule_2_3_nested_comments_not_allowed()\n", line);
 }
 
-void rule_4_2_only_simple_escape_sequences_allowed(int in_quote,
+
+void rule_4_1_only_simple_escape_sequences_allowed(int in_quote,
                                                    int a[],
                                                    int line) 
 {
@@ -28,8 +30,19 @@ void rule_4_2_only_simple_escape_sequences_allowed(int in_quote,
         and a[2]=='\\'
         and is_not_one_of(a[1], simple_escape_sequences))
         //and (a[1]!='0' or (a[1]=='0' and is_one_of(a[0],DIGITS))))
-        printf("%d:rule_4_2_only_simple_escape_sequences_allowed()\n", line);
+        printf("%d:rule_4_1_only_simple_escape_sequences_allowed()\n", line);
 }
+
+
+void rule_4_2_trigraphs_not_allowed(int a[], int line)
+{
+    // Trigraphs are: ??=  ??(  ??/  ??)  ??'  ??<  ??!  ??>  ??- 
+    char trigraph_last_characters[] = "=()/'<!>-";
+    
+    if (a[2]=='?' and a[1]=='?' and is_one_of(a[0],trigraph_last_characters))
+        printf("%d:rule_4_2_trigraphs_not_allowed()\n", line);
+}
+
 
 void rule_7_1_octal_constants_and_escape_sequences_not_allowed(int in_code,
                                                                int in_quote,

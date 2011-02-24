@@ -82,12 +82,14 @@ int main() {
                                              in_comment_old, 
                                              line);
         
-        rule_4_2_only_simple_escape_sequences_allowed(in_quote, 
+        rule_4_1_only_simple_escape_sequences_allowed(in_quote, 
                                                       b, line);
         
         rule_7_1_octal_constants_and_escape_sequences_not_allowed(in_code,
                                                                   in_quote, 
                                                                   b, line);
+        
+        rule_4_2_trigraphs_not_allowed(b, line);
         
     }
 }
