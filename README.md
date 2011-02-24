@@ -25,7 +25,7 @@ Not permited:
 
         ??=  ??(  ??/  ??)  ??'  ??<  ??!  ??>  ??- 
 
-### Rule 5.1 (required): Identifiers (internal and external) shall not rely on the significance of more than 31 characters.
+### √ Rule 5.1 (required): Identifiers (internal and external) shall not rely on the significance of more than 31 characters.
 
 ### √ Rule 7.1 (required): Octal constants (other than zero) and octal escape sequences shall not be used.
 

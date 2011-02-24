@@ -44,6 +44,29 @@ void rule_4_2_trigraphs_not_allowed(int a[], int line)
 }
 
 
+void rule_5_1_identifiers_longer_than_31_characters_not_allowed(int in_code,
+                                                                int a[],
+                                                                int line)
+{   
+    int n=1;
+    
+    if (in_code 
+        and is_not_one_of(a[32], DIGITS)
+        and is_not_one_of(a[32], LETTERS)
+        and a[32]!='_'
+        and (is_one_of(a[31], LETTERS) or a[31]=='_'))  // 1st char
+            for (int i=0; i<31; i++)
+                if (is_one_of(a[i], LETTERS) 
+                    or is_one_of(a[i], DIGITS)
+                    or a[i]=='_') 
+                    n++;
+                    
+    if (n==32)
+       printf("%d:rule_5_1_identifiers_longer_than_31_characters_not_allowed\n",
+              line);
+}
+
+
 void rule_7_1_octal_constants_and_escape_sequences_not_allowed(int in_code,
                                                                int in_quote,
                                                                int a[],

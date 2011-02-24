@@ -9,12 +9,16 @@
 
 //char DIGITS[] = "0123456789";
 
-int b[] = { '0', '1', '2', '3' };
+int b[64] = { 0 };
 void /*b[]*/ buf(int c) {
-    int _b[] = { c, b[0], b[1], b[2] };
+    int b_old[64] = { 0 };  //= { c, b[0], b[1], b[2] };
     
-    for(int i=0; i<4; i++) {
-        b[i] = _b[i];
+    for (int i=0; i<64; i++) b_old[i] = b[i];
+    
+    b[0] = c;
+    
+    for (int i=1; i<64; i++) {
+        b[i] = b_old[i-1]; //printf("%c",b[i]);
     }
 }
 
@@ -31,6 +35,7 @@ int main() {
         if (c=='\n') line++;
         buf(c);
         printf("%c",c);
+        //printf("%s \n",b);
          
         in_single_quote_old = in_single_quote;
         in_double_quote_old = in_double_quote;
@@ -85,11 +90,14 @@ int main() {
         rule_4_1_only_simple_escape_sequences_allowed(in_quote, 
                                                       b, line);
         
+        rule_4_2_trigraphs_not_allowed(b, line);
+        
         rule_7_1_octal_constants_and_escape_sequences_not_allowed(in_code,
                                                                   in_quote, 
                                                                   b, line);
         
-        rule_4_2_trigraphs_not_allowed(b, line);
+        rule_5_1_identifiers_longer_than_31_characters_not_allowed(in_code,
+                                                                   b, line);
         
     }
 }
