@@ -34,7 +34,7 @@ int main() {
     int in_comment_old_old, in_comment_old, in_comment = 0;
     int in_code_old, in_code = 0;
     
-    while ((c = getchar()) != EOF) {
+    while (c = getchar(), c != EOF) {
         if (c=='\n') line++;
         buf(c);
         printf("%c",c);
@@ -95,12 +95,19 @@ int main() {
         
         rule_4_2_trigraphs_not_allowed(b, line);
         
+        rule_5_1_identifiers_longer_than_31_characters_not_allowed(in_code,
+                                                                   b, line);
+                                                                   
         rule_7_1_octal_constants_and_escape_sequences_not_allowed(in_code,
                                                                   in_quote, 
                                                                   b, line);
+                                                                   
+        rule_14_4_goto_not_allowed(in_code, b, line);
         
-        rule_5_1_identifiers_longer_than_31_characters_not_allowed(in_code,
-                                                                   b, line);
+        rule_14_5_continue_not_allowed(in_code, b, line);
+        
+        //if (is_in_buffer_at("continue", "alsdf; eunitnoc slkd", 14))
+            //printf("!");
         
     }
 }

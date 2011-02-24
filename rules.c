@@ -88,6 +88,25 @@ void rule_7_1_octal_constants_and_escape_sequences_not_allowed(int in_code,
 }
 
 
+void rule_14_4_goto_not_allowed(int in_code, int a[], int line)
+{
+    if (in_code
+        and is_not_one_of(a[5], IDENTIFIER_CHARACTERS)
+        and is_in_buffer_at("goto", a, 4)
+        and is_not_one_of(a[0], IDENTIFIER_CHARACTERS))
+            printf("%d:rule_14_4_goto_not_allowed()\n", line);
+}
+
+void rule_14_5_continue_not_allowed(int in_code, int a[], int line)
+{
+    if (in_code
+        and is_not_one_of(a[9], IDENTIFIER_CHARACTERS)
+        and is_in_buffer_at("continue", a, 8)
+        and is_not_one_of(a[0], IDENTIFIER_CHARACTERS))
+            printf("%d:rule_14_5_continue_not_allowed()\n", line);
+}
+
+
 
 
 

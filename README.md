@@ -39,9 +39,9 @@ Not permited:
 
 ### Rule 14.3 (required): Before preprocessing, a null statement shall only occur on a line by itself; it may be followed by a comment provided that the first character following the null statement is a white-space character.
 
-### Rule 14.4 (required): The goto statement shall not be used.
+### √ Rule 14.4 (required): The goto statement shall not be used.
 
-### Rule 14.5 (required): The continue statement shall not be used.
+### √ Rule 14.5 (required): The continue statement shall not be used.
 
 ### Rule 14.6 (required): For any iteration statement there shall be at most one break statement used for loop termination.
 

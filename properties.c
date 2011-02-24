@@ -5,7 +5,7 @@ int /*is_one_of_{kind}*/ is_one_of(char character, char string[])
     char c;
     int i=0;
     
-    while((c = string[i++]) != '\0')
+    while(c = string[i++], c != '\0')
         if (character == c) return 1;
         
     return 0;
@@ -14,6 +14,22 @@ int /*is_one_of_{kind}*/ is_one_of(char character, char string[])
 int /*is_not_one_of_{kind}*/ is_not_one_of(char character, char string[])
 {
     return not is_one_of(character, string);
+}
+
+int /*is_in_buffer_at_{position}*/ is_in_buffer_at(char string[],
+                                                    int buffer[],
+                                                    int position)
+{
+    char c1, c2;
+    int i1=0, i2=position;
+    
+    while(c1=string[i1++], 
+          c2=buffer[i2--],
+          c1!='\0' or c1!='\0')
+        if (c1 != c2) return 0;
+        //printf("<%c=%c>",c1,c2);
+
+    return 1;
 }
 
 int /*in_{quote_type}_quote*/ check_if_in_a_certain_quote(char quote_type, 
